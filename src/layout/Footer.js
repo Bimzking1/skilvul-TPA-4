@@ -4,9 +4,9 @@ import './../assets/css/main.css'
 const Footer = () => {
   return (
     <div id="footer">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-4">
+      <div className="container">
+        <div className="row">
+          <div className="col-lg-4">
             <h4>MY ADDRESS</h4>
             <p>
               Perumahan Kebraon Indah Permai I-25,<br/>
@@ -14,7 +14,7 @@ const Footer = () => {
             </p>
           </div>
           
-          <div class="col-lg-4">
+          <div className="col-lg-4">
             <h4>My Links</h4>
             <p>
               <a href="https://www.linkedin.com/in/paulus-bimo-347b13200/" target="_blank">Linkedin</a><br/>
@@ -23,7 +23,7 @@ const Footer = () => {
             </p>
           </div>
           
-          <div class="col-lg-4">
+          <div className="col-lg-4">
             <h4>My Motto</h4>
             <p>Be Simple</p>
           </div>

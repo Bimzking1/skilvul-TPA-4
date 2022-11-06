@@ -169,14 +169,14 @@ hr {
 	background-color: #ffffff;
 }
 
-bd {
+.bd {
 	font-size: 12px;
 	text-transform: uppercase;
 	color: #d2d2d2;
 	font-weight: 700;
 }
 
-ba {
+.ba {
 	font-size: 12px;
 	text-transform: uppercase;
 }
@@ -217,6 +217,10 @@ bt {
 	opacity: 0.5;
 }
 
+.newsDetailImage{
+	width: 100%;
+}
+
 /* glyphicon */
 
 .glyphicon {
@@ -230,4 +234,22 @@ bt {
 	margin-right: 20px;
 	margin-left: 20px;
 	margin-bottom: 20px;
+}
+
+/* About */
+
+@media screen and (max-width: 991px) {
+	.skillPercentage{
+		display: grid;
+		grid-template-columns: repeat(1, 1fr);
+		gap: 0px 20px;
+	}
+}
+
+@media screen and (min-width: 992px) {
+	.skillPercentage{
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 0px 20px;
+	}
 }

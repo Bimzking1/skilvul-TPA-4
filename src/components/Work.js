@@ -11,45 +11,67 @@ import Quote from './../assets/img/portfolio/Quote.png'
 import Burger from './../assets/img/portfolio/Burger.png'
 
 const Work = () => {
-  return (
-	<div className="container pt">
-		<div className="row mt">
-			<div className="col-lg-6 col-lg-offset-3 centered">
-				<h3>PORTOFOLIO</h3>
-				<hr/>
-				<p>Ini adalah beberapa website buatan saya.</p>
+
+    const works = [
+        {
+            id: 1,
+            projectname: 'Inhotels',
+            image: Inhotel,
+			links: "https://inhotel.id/"
+        },
+        {
+            id: 2,
+            projectname: 'Fafifu Shop',
+            image: Fafifu,
+			links: "http://fafifu.herokuapp.com/"
+        },
+        {
+            id: 3,
+            projectname: 'Nomdo',
+            image: Nomdo,
+			links: "https://nomdo.netlify.app/"
+        },
+        {
+            id: 4,
+            projectname: 'Star Wars Library',
+            image: StarWars,
+			links: "https://bimo-star-wars-library.netlify.app/"
+        },
+        {
+            id: 5,
+            projectname: 'Random Quotes',
+            image: Quote,
+			links: "https://bimo-react-advice-quote.netlify.app/"
+        },
+        {
+            id: 6,
+            projectname: 'Burger Mini App',
+            image: Burger,
+			links: "https://bimo-burger-mini-app.netlify.app/"
+        },
+	]
+
+	return (
+		<div className="container pt">
+			<div className="row mt">
+				<div className="col-lg-6 col-lg-offset-3 centered">
+					<h3>PORTOFOLIO</h3>
+					<hr/>
+					<p>Ini adalah beberapa website buatan saya.</p>
+				</div>
+			</div>
+			<div className="row mt centered">
+				{works.map((work) => {
+					return(
+						<div className="col-lg-4">
+							<a className="zoom green" ><img className="img-responsive" src={work.image} alt="" /></a>
+							<a href={`${work.links}`} target="_blank"><p>{work.projectname}</p></a>
+						</div>
+					)
+				})}
 			</div>
 		</div>
-		<div className="row mt centered">	
-			<div className="col-lg-4">
-				<a className="zoom green" ><img className="img-responsive" src={Inhotel} alt="" /></a>
-				<a href="https://inhotel.id/" target="_blank"><p>Inhotels</p></a>
-			</div>
-			<div className="col-lg-4">
-				<a className="zoom green" ><img className="img-responsive" src={Fafifu} alt="" /></a>
-				<a href="http://fafifu.herokuapp.com/" target="_blank"><p>Fafifu Shop</p></a>
-			</div>
-			<div className="col-lg-4">
-				<a className="zoom green" ><img className="img-responsive" src={Nomdo} alt="" /></a>
-				<a href="https://nomdo.netlify.app/" target="_blank"><p>Nomdo</p></a>
-			</div>
-		</div>
-		<div className="row mt centered">	
-			<div className="col-lg-4">
-				<a className="zoom green" ><img className="img-responsive" src={StarWars} alt="" /></a>
-				<a href="https://bimo-star-wars-library.netlify.app/" target="_blank"><p>Star Wars Library</p></a>
-			</div>
-			<div className="col-lg-4">
-				<a className="zoom green" ><img className="img-responsive" src={Quote} alt="" /></a>
-				<a href="https://bimo-react-advice-quote.netlify.app/" target="_blank"><p>Random Quotes</p></a>
-			</div>
-			<div className="col-lg-4">
-				<a className="zoom green" ><img className="img-responsive" src={Burger} alt="" /></a>
-				<a href="https://bimo-burger-mini-app.netlify.app/" target="_blank"><p>Burger Mini App</p></a>
-			</div>
-		</div>
-	</div>
-  )
+	)
 }
 
 export default Work

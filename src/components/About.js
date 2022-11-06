@@ -18,188 +18,141 @@ import VueImage from './../assets/img/skills/vue.png'
 import GithubImage from './../assets/img/skills/github.png'
 
 const About = () => {
-  return (
-    <>
-        <div id="ww">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2 centered">
-                        <img src={ProfilePhoto} alt="Bimo"/>
-                        <h1>Tentang Bimo</h1>
-                        <p>Saya adalah mahasiswa Teknik Informatika di Politeknik Elektronika Negeri Surabaya (PENS).</p>
-                        <p>Saya menyukai bidang pengembangan website, terutama bagian Frontend.</p>
-                    
+
+    const skills = [
+        {
+            id: 1,
+            skillname: 'HTML 5',
+            image: HTMLImage,
+            percentage: 60
+        },
+        {
+            id: 2,
+            skillname: 'CSS 3',
+            image: CSSImage,
+            percentage: 80
+        },
+        {
+            id: 3,
+            skillname: 'Javascript',
+            image: JSImage,
+            percentage: 70
+        },
+        {
+            id: 4,
+            skillname: 'Node JS',
+            image: NodeImage,
+            percentage: 40
+        },
+        {
+            id: 5,
+            skillname: 'React JS',
+            image: ReactImage,
+            percentage: 60
+        },
+        {
+            id: 6,
+            skillname: 'Bootstrap',
+            image: BootstrapImage,
+            percentage: 50
+        },
+        {
+            id: 7,
+            skillname: 'Tailwind',
+            image: TailwindImage,
+            percentage: 60
+        },
+        {
+            id: 8,
+            skillname: 'Figma',
+            image: FigmaImage,
+            percentage: 80
+        },
+        {
+            id: 9,
+            skillname: 'Next JS',
+            image: NextImage,
+            percentage: 40
+        },
+        {
+            id: 10,
+            skillname: 'Express JS',
+            image: ExpressImage,
+            percentage: 30
+        },
+        {
+            id: 11,
+            skillname: 'Vue JS',
+            image: VueImage,
+            percentage: 20
+        },
+        {
+            id: 12,
+            skillname: 'Github',
+            image: GithubImage,
+            percentage: 70
+        },
+    ]
+
+    return (
+        <>
+            <div id="ww">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-lg-8 col-lg-offset-2 centered">
+                            <img src={ProfilePhoto} alt="Bimo"/>
+                            <h1>Tentang Bimo</h1>
+                            <p>Saya adalah mahasiswa Teknik Informatika di Politeknik Elektronika Negeri Surabaya (PENS).</p>
+                            <p>Saya menyukai bidang pengembangan website, terutama bagian Frontend.</p>
+                        
+                        </div>
                     </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="container pt">
-            <div class="row mt centered">	
-                <h1>My Skills</h1><br/>
-                <div class="col-lg-3 centered">
-                    <img class="centered" src={HTMLImage} alt="" />
-                    <p>HTML 5</p>
-                </div>
-                
-                <div class="col-lg-3 centered">
-                    <img class="centered" src={CSSImage} alt="" />
-                    <p>CSS 3</p>
-                </div>
-                
-                <div class="col-lg-3 centered">
-                    <img class="centered" src={JSImage} alt="" />
-                    <p>Javascript</p>
-                </div>
-                
-                <div class="col-lg-3 centered">
-                    <img class="centered" src={NodeImage} alt="" />
-                    <p>Node.js</p>
-                </div>
-            </div>
-            <div class="row mt centered">
-                <div class="col-lg-3 centered">
-                    <img class="centered" src={ReactImage} alt="" />
-                    <p>React JS</p>
-                </div>
-                
-                <div class="col-lg-3 centered">
-                    <img class="centered" src={BootstrapImage} alt="" />
-                    <p>Bootstrap</p>
-                </div>
-                
-                <div class="col-lg-3 centered">
-                    <img class="centered" src={TailwindImage} alt="" />
-                    <p>Tailwind</p>
-                </div>
-                
-                <div class="col-lg-3 centered">
-                    <img class="centered" src={FigmaImage} alt="" />
-                    <p>Figma</p>
-                </div>
-            </div>
-            <div class="row mt centered">
-                <div class="col-lg-3 centered">
-                    <img class="centered" src={NextImage} alt="" />
-                    <p>Next JS</p>
-                </div>
-                
-                <div class="col-lg-3 centered">
-                    <img class="centered" src={ExpressImage} alt="" />
-                    <p>Express JS</p>
-                </div>
-                
-                <div class="col-lg-3 centered">
-                    <img class="centered" src={VueImage} alt="" />
-                    <p>Vue JS</p>
-                </div>
-                
-                <div class="col-lg-3 centered">
-                    <img class="centered" src={GithubImage} alt="" />
-                    <p>Github</p>
                 </div>
             </div>
             
-            <div class="row mt">
-                <div class="col-lg-3">
+            <div className="container pt">
+                <div className="row mt centered">	
+                    <h1>My Skills</h1><br/>
+                    
+                    {skills.map((skill) => {
+                        return(
+                            <div className="col-lg-3 centered">
+                                <img src={skill.image} className="centered" alt="" />
+                                <p>{skill.skillname}</p>
+                            </div>
+                        )
+                    })}
+                </div>
+                
+                <div>
                     <h4>Skill Percentage</h4><br/>
-                    HTML 5
-                    <div class="progress">
-                        <div class="progress-bar progress-bar-theme" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style={{width: '80%'}}>
-                            <span class="sr-only">60% Complete</span>
-                        </div>
-                    </div>
-
-                    React JS
-                    <div class="progress">
-                        <div class="progress-bar progress-bar-theme" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style={{width: '60%'}}>
-                            <span class="sr-only">80% Complete</span>
-                        </div>
-                    </div>
+                    <div className="skillPercentage">
                     
-                    Next JS
-                    <div class="progress">
-                        <div class="progress-bar progress-bar-theme" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style={{width: '40%'}}>
-                            <span class="sr-only">95% Complete</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-lg-3">
-                    <br/><br/><br/>
-                    CSS 3
-                    <div class="progress">
-                        <div class="progress-bar progress-bar-theme" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style={{width: '80%'}}>
-                            <span class="sr-only">60% Complete</span>
-                        </div>
-                    </div>
-
-                    Bootstrap
-                    <div class="progress">
-                        <div class="progress-bar progress-bar-theme" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style={{width: '50%'}}>
-                            <span class="sr-only">80% Complete</span>
-                        </div>
-                    </div>
-                    
-                    Express JS
-                    <div class="progress">
-                        <div class="progress-bar progress-bar-theme" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style={{width: '40%'}}>
-                            <span class="sr-only">95% Complete</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-lg-3">
-                    <br/><br/><br/>
-                    Javascript
-                    <div class="progress">
-                        <div class="progress-bar progress-bar-theme" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style={{width: '70%'}}>
-                            <span class="sr-only">60% Complete</span>
-                        </div>
-                    </div>
-
-                    Tailwind
-                    <div class="progress">
-                        <div class="progress-bar progress-bar-theme" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style={{width: '60%'}}>
-                            <span class="sr-only">80% Complete</span>
-                        </div>
-                    </div>
-                    
-                    Vue JS
-                    <div class="progress">
-                        <div class="progress-bar progress-bar-theme" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style={{width: '20%'}}>
-                            <span class="sr-only">95% Complete</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-lg-3">
-                    <br/><br/><br/>
-                    Node JS
-                    <div class="progress">
-                        <div class="progress-bar progress-bar-theme" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style={{width: '40%'}}>
-                            <span class="sr-only">60% Complete</span>
-                        </div>
-                    </div>
-
-                    Figma
-                    <div class="progress">
-                        <div class="progress-bar progress-bar-theme" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style={{width: '80%'}}>
-                            <span class="sr-only">80% Complete</span>
-                        </div>
-                    </div>
-                    
-                    Github
-                    <div class="progress">
-                        <div class="progress-bar progress-bar-theme" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style={{width: '70%'}}>
-                            <span class="sr-only">95% Complete</span>
-                        </div>
+                        {skills.map((skill) => {
+                            return(
+                                <div>
+                                    {skill.skillname}
+                                    <div className="progress">
+                                        <div 
+                                            className="progress-bar progress-bar-theme" 
+                                            role="progressbar" 
+                                            aria-valuenow={`${skill.percentage}`} 
+                                            aria-valuemin="0" 
+                                            aria-valuemax="100" 
+                                            style={{
+                                                width: `${skill.percentage}%`
+                                            }}>
+                                            <span className="sr-only">{skill.percentage}% Complete</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            )
+                        })}
                     </div>
                 </div>
             </div>
-        </div>
-    </>
-  )
+        </>
+    )
 }
 
 export default About

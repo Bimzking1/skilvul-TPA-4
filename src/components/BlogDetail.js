@@ -1,39 +1,57 @@
 // Dependencies
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import { useParams } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import axios from 'axios'
 import './../assets/css/main.css'
 
 // Assets
 import ProfilePhoto from './../assets/img/Bimo.png'
-import BlogDetailPost from './../assets/img/ronaldo.png'
 
 const BlogDetail = () => {
-  return (
-	<div id="white">
-	    <div class="container">
-			<div class="row">
-				<div class="col-lg-8 col-lg-offset-2">
-					<p><img src={ProfilePhoto} width="50px" height="50px"/> <ba>Paulus Bimo</ba></p>
-					<p><bd>Oktober 7, 2022</bd></p>
-					<h4>Hard Days Away From Home</h4>
-					<p><img class="img-responsive" src={BlogDetailPost} alt=""/></p>
-					<p>
-						Manchester United kembali memenangi pertandingan di Europa League dengan susah payah setelah bertandang ke Siprus, homebase dari tim Omonia Nikosia. 
-						Pertandingan dimenangi MU dengan skor 3-2 dan bahkan mereka tertinggal lebih dahulu. 
-						Taktik penguasaan yang diusung Erik ten Hag kurang mampu diselesaikan dengan baik oleh tim, 
-						terutama oleh si racun, Cristiano Ronaldo, yang hanya mencatatkan 1 tembakan ke gawang dari 8 kesempatan.
-					</p>
-					<p>
-						Marcus Rashford tampil heroik dengan torehan 2 gol, dilengkapi oleh Anthony Martial dengan gol spektakulernya dari luar kotak penalti.
-					</p>
-					<br/>
-					<hr/>
-					<p><a href="blog.html"># Back</a></p>
-				</div>
+	
+    const params = useParams()
+    const [newsDetail, setNewsDetail] = useState(null)
+      
+    useEffect(() => {
+        axios
+            .get(`https://634e4141f34e1ed826869202.mockapi.io/news/${params.id}`)
+            .then((res) => {
+                setNewsDetail(res.data);
+            })
+            .catch((err) => {
+                console.log(err)
+            });
+    }, []);
+	
+    console.log(newsDetail)
 
-			</div>
-	    </div>
-	</div>
-  )
+	return (
+        <>
+			{ newsDetail !== null &&
+				<div id={`${newsDetail.idColor}`}>
+					<div className="container">
+						<div className="row">
+							<div className="col-lg-8 col-lg-offset-2">
+								<p className="ba"><img src={ProfilePhoto} width="50px" height="50px"/> Paulus Bimo </p>
+								<p className="bd">{newsDetail.date}</p>
+								<h4>{newsDetail.title}</h4>
+								<p className="newsDetailImageContainer">
+									<img className="img-responsive newsDetailImage" src={newsDetail.image} alt=""/>
+								</p>
+								<p>
+									{newsDetail.text}
+								</p>
+								<br/>
+								<hr/>
+								<p><Link to='/blog'>Back</Link></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			}
+        </>
+	)
 }
 
 export default BlogDetail
