@@ -65,7 +65,7 @@ const Work = () => {
 					return(
 						<div className="col-lg-4">
 							<a className="zoom green" ><img className="img-responsive" src={work.image} alt="" /></a>
-							<a href={`${work.links}`} target="_blank"><p>{work.projectname}</p></a>
+							<a href={`${work.links}`} target="_blank" rel="noreferrer"><p>{work.projectname}</p></a>
 						</div>
 					)
 				})}

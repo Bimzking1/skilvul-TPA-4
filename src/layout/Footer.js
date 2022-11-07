@@ -17,9 +17,9 @@ const Footer = () => {
           <div className="col-lg-4">
             <h4>My Links</h4>
             <p>
-              <a href="https://www.linkedin.com/in/paulus-bimo-347b13200/" target="_blank">Linkedin</a><br/>
-              <a href="https://www.instagram.com/bimopaul/" target="_blank">Instagram</a><br/>
-              <a href="https://github.com/Bimzking1" target="_blank">Github</a>
+              <a href="https://www.linkedin.com/in/paulus-bimo-347b13200/" target="_blank" rel="noreferrer">Linkedin</a><br/>
+              <a href="https://www.instagram.com/bimopaul/" target="_blank" rel="noreferrer">Instagram</a><br/>
+              <a href="https://github.com/Bimzking1" target="_blank" rel="noreferrer">Github</a>
             </p>
           </div>
           
