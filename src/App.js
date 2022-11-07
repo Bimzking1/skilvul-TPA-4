@@ -1,5 +1,5 @@
 import React from "react"
-import { BrowserRouter, Routes, Route, useNavigate, Navigate, Link } from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 import Home from './components/Home'
 import Work from './components/Work'
@@ -17,10 +17,6 @@ function App() {
           <Route index element={<Home />} />
           <Route path="/portofolio" element={<Work />} />
           <Route path="/about" element={<About />} />
-          {/* <Route path="/blog" >
-            <Route index element={<Blog />} />
-            <Route path="/blogDetail/:id" element={<BlogDetail />} />
-          </Route> */}
           <Route path="/blog" element={<Blog />} />
           <Route path="/blogDetail/:id" element={<BlogDetail />} />
           <Route path="/contact" element={<Contact />} />
