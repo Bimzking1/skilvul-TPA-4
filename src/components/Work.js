@@ -1,6 +1,7 @@
 // Dependencies
 import React from 'react'
 import './../assets/css/main.css'
+import WorkCard from './WorkCard'
 
 // Assets
 import Inhotel from './../assets/img/portfolio/Inhotel.png'
@@ -61,12 +62,9 @@ const Work = () => {
 				</div>
 			</div>
 			<div className="row mt centered">
-				{works.map((work) => {
+				{works.map((work, index) => {
 					return(
-						<div className="col-lg-4">
-							<a className="zoom green" ><img className="img-responsive" src={work.image} alt="" /></a>
-							<a href={`${work.links}`} target="_blank" rel="noreferrer"><p>{work.projectname}</p></a>
-						</div>
+						<WorkCard workProps={work} key={index}/>
 					)
 				})}
 			</div>
